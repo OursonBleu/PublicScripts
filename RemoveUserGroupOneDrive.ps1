@@ -31,7 +31,6 @@ $Credentials = Get-Credential -Message "Enter your admin credentials starting wi
                 Connect-SPOService -Url "$OneDriveAdminUrl"
                 $OnedriveURL = Get-PnPUserProfileProperty -Account $userinfo.userprincipalname
                 Set-SPOSite -Identity ($OnedriveURL.PersonalUrl).Trimend('/') -Owner $ManagerInfo.UserPrincipalName -NoWait
-                #Set-PNPTenantSite -Identity ($OnedriveURL.PersonalUrl).Trimend('/') -Owners $ManagerInfo.UserPrincipalName
                 Write-Host = $OnedriveURL.PersonalUrl
                 $OtherUser = Read-Host -Prompt "Do you have another user? Please answer Yes or No"
             }else{
